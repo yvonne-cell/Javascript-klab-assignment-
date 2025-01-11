@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Projects</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 20px;
+      background-color: #f4f4f4;
+    }
+    h1 {
+      text-align: center;
+    }
+    .project {
+      background-color: white;
+      padding: 20px;
+      margin: 10px 0;
+      border-radius: 8px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+      width: 790px; /* Set width to 400px */
+      height: 140px; /* Set height to 370px */
+      margin-bottom: 20px; /* Space between the projects */
+      overflow: hidden; /* Prevents content from overflowing */
+    }
+    .project h2 {
+      margin: 0;
+      font-size: 24px;
+    }
+    .project p {
+      margin: 5px 0;
+      color: #555;
+    }
+    .technologies {
+      font-weight: bold;
+    }
+    /* Adding dashed line between project sections */
+    .project:not(:last-child) {
+      border-bottom: 2px dashed #ccc; /* Dashed line between projects */
+    }
+  </style>
+</head>
+<body>
+
+  <h1>My Projects</h1>
+  <div id="projects-container"></div>
+
+  <script>
+    const projects = [
+      {
+        name: "Project_Name:SocialHub",
+        description: "A social media app for sharing posts.",
+        technologyUsed: ["Flutter", "Firebase"],
+        year: 2024
+      },
+      {
+        name: "Project_Name:E-Commerce Platform",
+        description: "An online shopping website.",
+        technologyUsed: ["React", "Node.js", "MongoDB"],
+        year: 2023
+      },
+      {
+        name: "Project_Name:Portfolio Website",
+        description: "A personal portfolio website.",
+        technologyUsed: ["HTML", "CSS", "JavaScript"],
+        year: 2022
+      }
+    ];
+
+    // Function to display project details
+    function displayProjects() {
+      const container = document.getElementById('projects-container');
+      projects.map(project => {
+        const projectElement = document.createElement('div');
+        projectElement.classList.add('project');
+
+        projectElement.innerHTML = `
+          <h2>${project.name}</h2>
+          <p><strong>Description:</strong> ${project.description}</p>
+          <p><strong>Technologies Used:</strong> ${project.technologyUsed.join(', ')}</p>
+          <p><strong>Year:</strong> ${project.year}</p>
+        `;
+
+        container.appendChild(projectElement);
+      });
+    }
+
+    // Call the function to display the projects on page load
+    displayProjects();
+  </script>
+
+</body>
+</html>
